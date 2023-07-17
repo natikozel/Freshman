@@ -1,0 +1,1 @@
+Bash scripts as part of the 'Development tools' course.

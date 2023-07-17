@@ -1,0 +1,1 @@
+A test generating javafx-based tool using FXML views.

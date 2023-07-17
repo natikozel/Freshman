@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.test.Controller">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#method9" text="Quit" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <SplitPane dividerPositions="0.49999999999999994" prefHeight="529.0" prefWidth="900.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TabPane prefHeight="527.0" prefWidth="446.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="Manual Exam">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <AnchorPane layoutY="6.0" prefHeight="526.0" prefWidth="446.0">
+                                       <children>
+                                          <Label layoutX="20.0" layoutY="23.0" prefHeight="18.0" prefWidth="386.0" text="Pick questions from Repository by their position (1,2,3...etc)">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="questionPicked" layoutX="20.0" layoutY="53.0" prefHeight="26.0" prefWidth="280.0" />
+                                          <Button layoutX="316.0" layoutY="53.0" mnemonicParsing="false" onAction="#addQuestion" text="Add Question" />
+                                          <Button layoutX="87.0" layoutY="100.0" mnemonicParsing="false" onAction="#createManualExam" prefHeight="39.0" prefWidth="272.0" text="Create exam" />
+                                          <Button layoutX="88.0" layoutY="167.0" mnemonicParsing="false" onAction="#showNewTest" prefHeight="26.0" prefWidth="272.0" text="Show new test" />
+                                          <TextArea fx:id="resultArea2" layoutY="216.0" prefHeight="275.0" prefWidth="446.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                        </content>
+                      </Tab>
+                        <Tab text="Automatic Exam">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <AnchorPane layoutY="6.0" prefHeight="526.0" prefWidth="446.0">
+                                       <children>
+                                          <Label layoutX="38.0" layoutY="22.0" prefHeight="19.0" prefWidth="150.0" text="How many questions?">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Button layoutX="87.0" layoutY="100.0" mnemonicParsing="false" onAction="#createAutomaticExam" prefHeight="39.0" prefWidth="272.0" text="Create exam" />
+                                          <Button layoutX="88.0" layoutY="167.0" mnemonicParsing="false" onAction="#showNewTest2" prefHeight="26.0" prefWidth="272.0" text="Show new test" />
+                                          <TextArea fx:id="resultArea3" layoutY="216.0" prefHeight="275.0" prefWidth="446.0" />
+                                          <TextField fx:id="amountOfQuestions" layoutX="197.0" layoutY="19.0" prefHeight="26.0" prefWidth="225.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="ap" minHeight="0.0" minWidth="0.0" prefHeight="526.0" prefWidth="430.0">
+               <children>
+                  <Label layoutX="48.0" layoutY="28.0" prefHeight="18.0" prefWidth="335.0" text="Question Repository">
+                     <font>
+                        <Font name="Arial Italic" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="resultArea" layoutX="-4.0" layoutY="250.0" prefHeight="275.0" prefWidth="900.0" />
+                  <Separator layoutX="30.0" layoutY="61.0" prefHeight="2.0" prefWidth="216.0" />
+                  <Button layoutX="246.0" layoutY="172.0" mnemonicParsing="false" onAction="#method1" prefHeight="26.0" prefWidth="182.0" text="Show available Questions" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Pane prefHeight="50.0" prefWidth="900.0">
+         <children>
+            <Button layoutX="372.0" layoutY="12.0" mnemonicParsing="false" onAction="#returnToMenu2" prefHeight="25.0" prefWidth="157.0" text="Return" />
+         </children>
+      </Pane>
+  </children>
+</VBox>

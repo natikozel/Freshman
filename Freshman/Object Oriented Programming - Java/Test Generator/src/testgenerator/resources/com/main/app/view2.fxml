@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="689.0" prefWidth="913.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.main.app.Controller">
+  <children>
+    <MenuBar fx:id="menubar" prefHeight="0.0" prefWidth="879.0" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#method9" text="Quit" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="646.0" prefWidth="867.0" VBox.vgrow="ALWAYS">
+         <children>
+            <MenuButton fx:id="menubox" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="868.0" text="Please select an option">
+              <items>
+                <MenuItem fx:id="method1" mnemonicParsing="false" onAction="#method1" onMenuValidation="#method1" text="Show all questions available and their answers." />
+                <MenuItem fx:id="method2" mnemonicParsing="false" onAction="#method2" text="Create your own question &amp; answer." />
+                  <MenuItem mnemonicParsing="false" onAction="#method3" text="Update / Delete" />
+                  <MenuItem mnemonicParsing="false" onAction="#method4" text="Create an exam." />
+                  <MenuItem mnemonicParsing="false" onAction="#method5" text="Clone an existing exam." />
+                  <MenuItem fx:id="method9" mnemonicParsing="false" onAction="#method9" onMenuValidation="#method9" text="Exit." />
+              </items>
+               <font>
+                  <Font name="Arial Italic" size="15.0" />
+               </font>
+            </MenuButton>
+            <TextArea fx:id="resultArea" layoutX="19.0" layoutY="266.0" prefHeight="331.0" prefWidth="861.0" />
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
